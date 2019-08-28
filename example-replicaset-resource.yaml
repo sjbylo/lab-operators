@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: busybox
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: busybox-sleep
+  template:
+    metadata:
+      name: busybox-sleep
+      labels:
+        app: busybox-sleep
+    spec:
+      containers:
+      - name: busybox-sleep
+        image: busybox
+        args:
+        - sleep
+        - "1000000"
