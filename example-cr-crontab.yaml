@@ -4,5 +4,6 @@ metadata:
   name: my-crontab
 spec:
   cronSpec: "* * * * */5"
-  image: my-awesome-cron-image
+  image: our-internal-registry.com/my-cron-cmd-image
+  replicas: 3
 
